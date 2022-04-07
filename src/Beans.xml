@@ -7,4 +7,15 @@
     <bean id="helloWorld" class="hello.HelloWorld">
         <property name="message" value="Hello World!" />
     </bean>
+    
+    <bean id="student" class="hello.Student">
+        <constructor-arg name="id" value="2"></constructor-arg>
+        <constructor-arg name="name" value="李四"></constructor-arg>
+        <constructor-arg name="grade" ref="grade"></constructor-arg>
+    </bean>
+    <bean id="grade" class="hello.Grade">
+        <constructor-arg name="gradeId" value="4"></constructor-arg>
+        <constructor-arg name="gradeName" value="四年级"></constructor-arg>
+    </bean>
+    
 </beans>
