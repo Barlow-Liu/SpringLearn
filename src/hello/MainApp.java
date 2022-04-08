@@ -12,8 +12,9 @@ public class MainApp {
     public static void main(String[] args) {
         @SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-        HelloWorld obj = context.getBean("helloWorld",HelloWorld.class);
-        obj.getMessage();
+
+//        HelloWorld obj = context.getBean("helloWorld",HelloWorld.class);
+//        obj.getMessage();
 
         Student student= context.getBean("student",Student.class);
         LOGGER.info(student.toString());
