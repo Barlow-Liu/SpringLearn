@@ -11,7 +11,7 @@ public class MainApp {
 	private static final Log LOGGER = LogFactory.getLog(MainApp.class);
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
-		AbstractApplicationContext  context = new ClassPathXmlApplicationContext("Beans.xml");
+		AbstractApplicationContext  context = new ClassPathXmlApplicationContext("postProcess/Beans-postProcess.xml");
 
 		PostProcess postProcess= context.getBean("postProcess",PostProcess.class);
         postProcess.getMessage();

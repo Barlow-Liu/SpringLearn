@@ -30,11 +30,5 @@
     	<property name="gradeId" value="3"></property>
         <property name="gradeName" value="三年级"></property>
     </bean>
-    
-    <bean id="postProcess" class="postProcess.PostProcess" init-method="init" destroy-method="destroy">
-    	<property name="message" value="hello post process"></property>
-    </bean>
-    
-    <bean id="initPostProcess" class="postProcess.InitPostProcess"></bean>
-    <bean id="initPostProcess2" class="postProcess.InitPostProcess2"></bean>
+
 </beans>

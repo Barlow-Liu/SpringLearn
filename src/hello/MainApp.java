@@ -11,7 +11,7 @@ public class MainApp {
 
     public static void main(String[] args) {
         @SuppressWarnings("resource")
-		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("Beans-hello.xml");
 
 //        HelloWorld obj = context.getBean("helloWorld",HelloWorld.class);
 //        obj.getMessage();
