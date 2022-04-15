@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="animal" class="extend.Animal">
+        <property name="name" value="动物"></property>
+        <property name="age" value="10"></property>
+    </bean>
+    <bean id="dog" class="extend.Dog" parent="animal">
+        <property name="name" value="小狗"></property>
+        <property name="call" value="汪汪汪……"></property>
+    </bean>
+    
+    <!-- 模板 -->
+    <bean id="animal2" abstract="true">
+    	<property name="name" value="动物模板"></property>
+        <property name="age" value="15"></property>
+    </bean>
+    <bean id="dog2" class="extend.Dog" parent="animal2">
+        <property name="name" value="小狗"></property>
+        <property name="call" value="汪汪汪……"></property>
+    </bean>
+    
+</beans>
