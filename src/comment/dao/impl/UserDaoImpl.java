@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import comment.dao.UserDao;
 
-@Repository("userDao")
+
 public class UserDaoImpl implements UserDao {
 
 	@Override

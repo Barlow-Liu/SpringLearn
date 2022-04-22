@@ -9,4 +9,7 @@
    
     <!--开启组件扫描功能-->
     <context:component-scan base-package="comment"></context:component-scan>
+    <bean id="userDao" class="comment.dao.impl.UserDaoImpl"></bean>
+    <bean id="userDao2" class="comment.dao.impl.UserDaoImpl"></bean>
+    
 </beans>

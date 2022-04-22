@@ -1,0 +1,5 @@
+标签	说明
+<list>	用于注入 list 类型的值，允许重复
+<set>	用于注入 set 类型的值，不允许重复
+<map>	用于注入 key-value 的集合，其中 key 和 value 都可以是任意类型
+<props>	用于注入 key-value 的集合，其中 key  和 value 都是字符串类型

@@ -12,7 +12,7 @@ Spring 提供了以下多个注解，这些注解可以直接标注在 Java 类�
 基于注解方式实现依赖注入
 我们可以通过以下注解将定义好 Bean 装配到其它的 Bean 中。
 注解			说明
-@Autowired	可以应用到 Bean 的属性变量、setter 方法、非 setter 方法及构造函数等，默认按照 Bean 的类型进行装配。
+@Autowired	可以应用到 Bean 的属性变量、setter 方法、非 setter 方法及构造函数等，默认按照 Bean 的类型进行装配。优先类型，其次名称
 			@Autowired 注解默认按照 Bean 的类型进行装配，默认情况下它要求依赖对象必须存在，如果允许 null 值，可以设置它的 required 属性为 false。如果我们想使用按照名称（byName）来装配，可以结合 @Qualifier 注解一起使用
 
 @Resource	作用与 Autowired 相同，区别在于 @Autowired 默认按照 Bean 类型装配，而 @Resource 默认按照 Bean 的名称进行装配。
@@ -23,3 +23,5 @@ Spring 提供了以下多个注解，这些注解可以直接标注在 Java 类�
 		如果都不指定，则先按 Bean 实例名称装配，如果不能匹配，则再按照 Bean 类型进行装配；如果都无法匹配，则抛出 NoSuchBeanDefinitionException 异常。
 
 @Qualifier	与 @Autowired 注解配合使用，会将默认的按 Bean 类型装配修改为按 Bean 的实例名称装配，Bean 的实例名称由 @Qualifier 注解的参数指定。
+
+

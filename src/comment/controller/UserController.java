@@ -10,6 +10,7 @@ import comment.service.UserService;
 public class UserController {
 	@Resource
     private UserService userService;
+
     public UserService getUserService() {
         return userService;
     }

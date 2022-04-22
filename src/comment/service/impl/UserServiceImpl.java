@@ -2,6 +2,7 @@ package comment.service.impl;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import comment.dao.UserDao;
@@ -10,7 +11,7 @@ import comment.service.UserService;
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
-	@Resource
+	@Autowired
 	private UserDao userDao;
 
 	public UserDao getUserDao() {
