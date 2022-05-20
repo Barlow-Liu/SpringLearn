@@ -1,0 +1,80 @@
+我们可以在 Spring 项目中通过 XML 配置，对切面（Aspect 或 Advisor）、切点（PointCut）以及通知（Advice）进行定义和管理，以实现基于 AspectJ 的 AOP 开发。
+
+Spring 提供了基于 XML 的 AOP 支持，并提供了一个名为“aop”的命名空间，该命名空间提供了一个 <aop:config> 元素。
+在 Spring 配置中，所有的切面信息（切面、切点、通知）都必须定义在 <aop:config> 元素中；
+在 Spring 配置中，可以使用多个 <aop:config>。
+每一个 <aop:config> 元素内可以包含 3 个子元素： pointcut、advisor 和 aspect ，这些子元素必须按照这个顺序进行声明。
+
+
+
+定义切面<aop:aspect>
+在 Spring 配置文件中，使用 <aop:aspect> 元素定义切面。该元素可以将定义好的 Bean 转换为切面 Bean，所以使用 <aop:aspect> 之前需要先定义一个普通的 Spring Bean。
+
+定义切入点<aop:pointcut>
+<aop:pointcut> 用来定义一个切入点，用来表示对哪个类中的那个方法进行增强。它既可以在 <aop:pointcut> 元素中使用，也可以在 <aop:aspect> 元素下使用。
+当 <aop:pointcut>元素作为 <aop:config> 元素的子元素定义时，表示该切入点是全局切入点，它可被多个切面所共享；
+当 <aop:pointcut> 元素作为 <aop:aspect> 元素的子元素时，表示该切入点只对当前切面有效。
+
+<aop:config>
+    <aop:pointcut id="myPointCut"
+        expression="execution(* net.biancheng.service.*.*(..))"/>
+</aop:config>
+
+其中，id 用于指定切入点的唯一标识名称，execution 用于指定切入点关联的切入点表达式。
+
+
+
+
+
+
+语法：execution(修饰符  返回值  包.类.方法名(参数) throws异常) 
+4个参数用空格分隔，第二和第三个必填。
+修饰符，一般省略
+         public                公共方法
+
+         *                        任意
+
+返回值，不能省略
+         void                   返回没有值
+
+         String                返回值字符串
+
+         *                       任意
+
+包，[省略]
+         com.gyf.crm                      固定包
+
+         com.gyf.crm.*.service    crm包下面子包任意 （例如：com.gyf.crm.staff.service）
+
+         com.gyf.crm..                   crm包下面的所有子包（含自己）
+
+         com.gyf.crm.*.service..  crm包下面任意子包，固定目录service，service目录任意包
+
+类，[省略]
+         UserServiceImpl                       指定类
+
+         *Impl                                          以Impl结尾
+
+         User*                                          以User开头
+
+         *                                                  任意
+
+方法名，不能省略
+         addUser                                     固定方法
+
+         add*                                         以add开头
+
+         *Do                                             以Do结尾
+
+         *                                                  任意
+
+(参数)
+         ()                                                  无参
+
+         (int)                                             一个整型
+
+         (int ,int)                                       两个
+
+         (..)                                                参数任意
+
+throws ,可省略，一般不写。

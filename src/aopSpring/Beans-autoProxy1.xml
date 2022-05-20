@@ -10,6 +10,7 @@
     <!-- 定义增强 -->
     <bean id="beforeAdvice" class="aopSpring.advice.UserDaoBeforeAdvice"></bean>
     <bean id="aroundAdvice" class="aopSpring.pointCutAdvice.OrderDaoPointCutAdvice"></bean>
+    
     <!--Spring 自动代理：根据 Bean 名称创建代理独享-->
     <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
         <property name="beanNames" value="*Dao"></property>

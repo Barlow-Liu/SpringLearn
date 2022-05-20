@@ -28,9 +28,9 @@
 		class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
 		<!--定义表达式，规定哪些方法进行拦截 .* 表示所有方法 -->
 		<!--<property name="pattern" value=".*"></property> -->
-		<!-- 正则表达  -->
+		<!-- 正则表达 .表示任意一个字符 -->
 		<property name="patterns"
-			value="aopSpring.pointCutAdvice.dao.OrderDao.add*,aopSpring.pointCutAdvice.dao.OrderDao.delete.*"></property>
+			value="aopSpring.pointCutAdvice.dao.OrderDao.ad*,aopSpring.pointCutAdvice.dao.OrderDao.delete.*"></property>
 		<property name="advice" ref="pointCutAdvice"></property>
 	</bean>
 	<!--Spring 通过配置生成代理 -->
