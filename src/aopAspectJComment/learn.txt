@@ -1,0 +1,24 @@
+ 		Annotation 注解介绍
+名称		说明
+@Aspect	用于定义一个切面。
+@Pointcut	用于定义一个切入点。
+@Before	用于定义前置通知，相当于 BeforeAdvice。
+@AfterReturning	用于定义后置通知，相当于 AfterReturningAdvice。
+@Around	用于定义环绕通知，相当于 MethodInterceptor。
+@AfterThrowing	用于定义抛出通知，相当于 ThrowAdvice。
+@After	用于定义最终通知，不管是否异常，该通知都会执行。
+@DeclareParents	用于定义引介通知，相当于 IntroductionInterceptor（不要求掌握）。
+
+commons-logging-1.2.jar
+spring-aop-5.3.13.jar
+spring-aspects-5.3.13.jar
+spring-beans-5.3.13.jar
+spring-context-5.3.13.jar
+spring-core-5.3.13.jar
+spring-expression-5.3.13.jar
+aspectjweaver-1.9.7.jar
+
+
+
+
+
